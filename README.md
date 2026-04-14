@@ -6,15 +6,12 @@ Hi, this is **QQQ**. Welcome to my GitHub.
 
 I’m an aspiring **Exploit Developer and Offensive Security Researcher**, currently building strong foundations in vulnerability research and low-level system behavior — with long-term goals of mastering advanced exploitation and contributing to high-impact security research.
 
----
-
 ## 👨‍💻 About Me
 
 ### 🚀 Early in the Journey — Focused on Mastery
 
 I’m new to the field of exploit development, but I approach it with discipline, structure, and long-term vision.
 My goal isn’t just to “learn hacking” — it’s to deeply understand how systems break at their core.
----
 
 💣 Future Exploit Developer
 
@@ -28,7 +25,7 @@ Currently studying:
 I aim to move from understanding vulnerabilities → to building reliable exploits → to researching new attack surfaces.
 
 Understanding how real systems are designed before trying to break them
----
+
 
 🔎 Vulnerability Research
 
