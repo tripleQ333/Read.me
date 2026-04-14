@@ -27,21 +27,21 @@ I aim to move from understanding vulnerabilities → to building reliable exploi
 Understanding how real systems are designed before trying to break them
 
 
-🔎 Vulnerability Research
+*🔎 Vulnerability Research*
 
 Root cause analysis of web vulnerabilities
 
 Deep study of XSS, IDOR, SQLi, and authentication flaws
 
 Analyzing public exploit writeups step-by-step
----
+
 
 🛠 Tooling & Workflow
 
 GDB + pwndbg debugging practice
 
 Improving Linux & CLI proficiency
----
+
 
 🧠 Skill Building
 
@@ -50,7 +50,7 @@ CTF challenges (web + beginner binary)
 Documenting everything I learn
 
 > # Strengthening secure development knowledge
----
+
 
 🎯 Long-Term Goals
 
