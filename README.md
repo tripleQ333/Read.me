@@ -52,7 +52,7 @@ CTF challenges (web + beginner binary)
 
 Documenting everything I learn
 
-Strengthening secure development knowledge
+> # Strengthening secure development knowledge
 ---
 
 🎯 Long-Term Goals
@@ -63,7 +63,7 @@ Strengthening secure development knowledge
 * Join elite-level offensive security teams
 * Eventually discover and weaponize complex vulnerabilities responsibly
 
----
+
 
 🧠 Philosophy
 
@@ -75,5 +75,4 @@ I believe:
 
 This is a long game — and I’m here to play it seriously.
 
----
 
