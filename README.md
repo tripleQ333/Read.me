@@ -16,8 +16,8 @@ My objective is to move from:
 ---
 
 ## 🛠 Toolkit
-![text](Tools.png)
 
+![alt text](Tools.jpg)
 ---
 
 ## Work & Practice
