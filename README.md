@@ -1,75 +1,93 @@
+# 👤 QQQ
 
-who is QQQ
+Aspiring **Exploit Developer & Offensive Security Researcher**
+Focused on understanding how systems break at a fundamental level.
 
+---
 
-Hi, this is **QQQ**. Welcome to my GitHub.
+## 🧠 About
 
-I’m an aspiring **Exploit Developer and Offensive Security Researcher**, currently building strong foundations in vulnerability research and low-level system behavior — with long-term goals of mastering advanced exploitation and contributing to high-impact security research.
+I approach exploit development with a focus on **low-level system behavior**, not shortcuts.
 
-## 👨‍💻 About Me
+My objective is to move from:
 
-### 🚀 Early in the Journey — Focused on Mastery
+> Understanding vulnerabilities → Building reliable exploits → Exploring new attack surfaces
 
-I’m new to the field of exploit development, but I approach it with discipline, structure, and long-term vision.
-My goal isn’t just to “learn hacking” — it’s to deeply understand how systems break at their core.
+---
 
-💣 Future Exploit Developer
+## 🛠 Toolkit
+![text](Tools.png)
 
-Currently studying:
+---
 
-* Memory corruption basics (stack & heap behavior)
-* Binary exploitation fundamentals
-* Web vulnerability research
-* How mitigations like ASLR, NX, and stack canaries work
+## Work & Practice
 
-I aim to move from understanding vulnerabilities → to building reliable exploits → to researching new attack surfaces.
+### Malware Analysis — WannaCry
 
-Understanding how real systems are designed before trying to break them
+* Performed **static and dynamic analysis** of ransomware behavior
+* Studied execution flow and key components
+* Analyzed how the malware propagates and executes
+* Observed runtime behavior through debugging and tracing
 
+---
 
-*🔎 Vulnerability Research*
+###  Binary Exploitation
 
-Root cause analysis of web vulnerabilities
+* Stack-based buffer overflow (offset discovery, RIP/EIP control)
+* Understanding memory layout and control flow hijacking
+* Debugging with GDB + pwndbg
 
-Deep study of XSS, IDOR, SQLi, and authentication flaws
+---
 
-Analyzing public exploit writeups step-by-step
+###  Reverse Engineering
 
+* Static analysis with Ghidra (function analysis, control flow reconstruction)
+* Dynamic analysis (debugging, breakpointing, tracing execution paths)
+* Understanding runtime behavior, memory interactions, and system calls
 
-🛠 Tooling & Workflow
+---
 
-GDB + pwndbg debugging practice
+### 🔎 Vulnerability Research
 
-Improving Linux & CLI proficiency
+* Root cause analysis of vulnerabilities
+* Studying real-world exploit write-ups
+* Understanding common flaw patterns
 
+---
 
-🧠 Skill Building
+##  Workflow
 
-CTF challenges (web + beginner binary)
+```text id="b6zpl7"
+Recon → Analysis → Debugging → Exploitation → Documentation
+```
 
-Documenting everything I learn
+---
 
-> # Strengthening secure development knowledge
+##  Currently Working On
 
+* Transition from 32-bit → 64-bit exploitation
+* Deepening understanding of stack internals
+* Expanding malware analysis skills
 
-🎯 Long-Term Goals
+---
 
-* Become highly skilled in exploit development
-* Publish detailed vulnerability research
-* Contribute to advanced security projects
-* Join elite-level offensive security teams
-* Eventually discover and weaponize complex vulnerabilities responsibly
+## 🎯 Milestones
 
+* [ ] Build and exploit a vulnerable C binary (stack buffer overflow)
+* [ ] Contribute to the security community through vulnerability research and technical analysis
+* [ ] Achieve CEDP Certification from CWL (target: next 3 months)
 
+---
 
-🧠 Philosophy
+## 🧠 Philosophy
 
-I believe:
+ > If it crashes, I’m interested.
 
-* Deep technical understanding > surface-level tricks
-* Patience > shortcuts
-* Discipline > hype
+* Depth over shortcuts
+* Consistency over intensity
+* Understanding over memorization
 
-This is a long game — and I’m here to play it seriously.
-
-
+---
+ 
+ "Segmentation fault? More like invitation." 
+ — a favorite of mine
