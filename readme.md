@@ -7,7 +7,7 @@ root@qqq:~$ whoami
 > If it crashes, I'm interested.
 ---
 
-## About.txt
+## About
 
 I don't chase shortcuts. I chase root causes.
 
@@ -52,10 +52,8 @@ Understanding vulnerabilities  →  Building reliable exploits  →  Exploring n
 
 ## Workflow --show
 
-#!/bin/bash
-# QQQ Exploit Development Workflow
-
 ```
+#!/bin/bash
 steps=(
   "01_RECON    → Map the target surface"
   "02_ANALYSIS → Understand the binary"
