@@ -1,0 +1,187 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 420" width="1200" height="420">
+  <defs>
+    <linearGradient id="bg2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#050a05;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0a1a0a;stop-opacity:1" />
+    </linearGradient>
+    <filter id="glow2">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="boxglow">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="420" fill="url(#bg2)"/>
+
+  <!-- Subtle grid -->
+  <g stroke="#00ff41" stroke-width="0.3" opacity="0.04">
+    <line x1="0" y1="60" x2="1200" y2="60"/>
+    <line x1="0" y1="120" x2="1200" y2="120"/>
+    <line x1="0" y1="180" x2="1200" y2="180"/>
+    <line x1="0" y1="240" x2="1200" y2="240"/>
+    <line x1="0" y1="300" x2="1200" y2="300"/>
+    <line x1="0" y1="360" x2="1200" y2="360"/>
+    <line x1="150" y1="0" x2="150" y2="420"/>
+    <line x1="300" y1="0" x2="300" y2="420"/>
+    <line x1="450" y1="0" x2="450" y2="420"/>
+    <line x1="600" y1="0" x2="600" y2="420"/>
+    <line x1="750" y1="0" x2="750" y2="420"/>
+    <line x1="900" y1="0" x2="900" y2="420"/>
+    <line x1="1050" y1="0" x2="1050" y2="420"/>
+  </g>
+
+  <!-- Title -->
+  <text x="600" y="44" text-anchor="middle" font-family="'Courier New', monospace" font-size="11" fill="#00ff41" opacity="0.5" letter-spacing="6">// TOOLKIT &amp; ARSENAL</text>
+  <line x1="80" y1="56" x2="1120" y2="56" stroke="#00ff41" stroke-width="0.5" opacity="0.2"/>
+
+  <!-- ============ ROW 1: EXPLOITATION TOOLS ============ -->
+
+  <!-- Card 1: GDB + pwndbg -->
+  <g filter="url(#boxglow)">
+    <rect x="60" y="76" width="210" height="130" rx="4" fill="#050a05" stroke="#00ff41" stroke-width="1" opacity="0.9"/>
+    <rect x="60" y="76" width="210" height="28" rx="4" fill="#00ff41" opacity="0.12"/>
+  </g>
+  <text x="165" y="95" text-anchor="middle" font-family="'Courier New', monospace" font-size="12" font-weight="bold" fill="#00ff41" letter-spacing="2">GDB + PWNDBG</text>
+  <text x="80" y="125" font-family="'Courier New', monospace" font-size="10" fill="#00ff41" opacity="0.7">$ gdb ./vuln</text>
+  <text x="80" y="143" font-family="'Courier New', monospace" font-size="10" fill="#00ff41" opacity="0.5">&gt; Debugger + exploit UI</text>
+  <text x="80" y="161" font-family="'Courier New', monospace" font-size="10" fill="#00ff41" opacity="0.5">&gt; Register inspection</text>
+  <text x="80" y="179" font-family="'Courier New', monospace" font-size="10" fill="#00ff41" opacity="0.5">&gt; Stack visualization</text>
+  <text x="80" y="197" font-family="'Courier New', monospace" font-size="9" fill="#00ff41" opacity="0.3">[ BINARY EXPLOITATION ]</text>
+
+  <!-- Card 2: pwntools -->
+  <g filter="url(#boxglow)">
+    <rect x="290" y="76" width="210" height="130" rx="4" fill="#050a05" stroke="#00ff41" stroke-width="1" opacity="0.9"/>
+    <rect x="290" y="76" width="210" height="28" rx="4" fill="#00ff41" opacity="0.12"/>
+  </g>
+  <text x="395" y="95" text-anchor="middle" font-family="'Courier New', monospace" font-size="12" font-weight="bold" fill="#00ff41" letter-spacing="2">PWNTOOLS</text>
+  <text x="310" y="125" font-family="'Courier New', monospace" font-size="10" fill="#00ff41" opacity="0.7">$ python3 exploit.py</text>
+  <text x="310" y="143" font-family="'Courier New', monospace" font-size="10" fill="#00ff41" opacity="0.5">&gt; Exploit scripting</text>
+  <text x="310" y="161" font-family="'Courier New', monospace" font-size="10" fill="#00ff41" opacity="0.5">&gt; Payload crafting</text>
+
+  <text x="310" y="179" font-family="'Courier New', monospace" font-size="10" fill="#00ff41" opacity="0.5">&gt; Process interaction</text>
+  <text x="310" y="197" font-family="'Courier New', monospace" font-size="9" fill="#00ff41" opacity="0.3">[ EXPLOIT DEVELOPMENT ]</text>
+
+  <!-- Card 3: Ghidra -->
+  <g filter="url(#boxglow)">
+    <rect x="520" y="76" width="210" height="130" rx="4" fill="#050a05" stroke="#00ff41" stroke-width="1" opacity="0.9"/>
+    <rect x="520" y="76" width="210" height="28" rx="4" fill="#00ff41" opacity="0.12"/>
+  </g>
+  <text x="625" y="95" text-anchor="middle" font-family="'Courier New', monospace" font-size="12" font-weight="bold" fill="#00ff41" letter-spacing="2">GHIDRA</text>
+  <text x="540" y="125" font-family="'Courier New', monospace" font-size="10" fill="#00ff41" opacity="0.7">$ analyzeHeadless ./</text>
+  <text x="540" y="143" font-family="'Courier New', monospace" font-size="10" fill="#00ff41" opacity="0.5">&gt; Decompilation</text>
+  <text x="540" y="161" font-family="'Courier New', monospace" font-size="10" fill="#00ff41" opacity="0.5">&gt; CFG reconstruction</text>
+  <text x="540" y="179" font-family="'Courier New', monospace" font-size="10" fill="#00ff41" opacity="0.5">&gt; Function analysis</text>
+  <text x="540" y="197" font-family="'Courier New', monospace" font-size="9" fill="#00ff41" opacity="0.3">[ REVERSE ENGINEERING ]</text>
+
+  <!-- Card 4: Cutter / Rizin -->
+  <g filter="url(#boxglow)">
+    <rect x="750" y="76" width="210" height="130" rx="4" fill="#050a05" stroke="#00ff41" stroke-width="1" opacity="0.9"/>
+    <rect x="750" y="76" width="210" height="28" rx="4" fill="#00ff41" opacity="0.12"/>
+  </g>
+  <text x="855" y="95" text-anchor="middle" font-family="'Courier New', monospace" font-size="12" font-weight="bold" fill="#00ff41" letter-spacing="2">CUTTER / RIZIN</text>
+  <text x="770" y="125" font-family="'Courier New', monospace" font-size="10" fill="#00ff41" opacity="0.7">$ cutter binary</text>
+  <text x="770" y="143" font-family="'Courier New', monospace" font-size="10" fill="#00ff41" opacity="0.5">&gt; Visual disassembly</text>
+  <text x="770" y="161" font-family="'Courier New', monospace" font-size="10" fill="#00ff41" opacity="0.5">&gt; Graph view</text>
+  <text x="770" y="179" font-family="'Courier New', monospace" font-size="10" fill="#00ff41" opacity="0.5">&gt; Dynamic debugging</text>
+  <text x="770" y="197" font-family="'Courier New', monospace" font-size="9" fill="#00ff41" opacity="0.3">[ REVERSE ENGINEERING ]</text>
+
+  <!-- Card 5: PEstudio -->
+  <g filter="url(#boxglow)">
+    <rect x="980" y="76" width="170" height="130" rx="4" fill="#050a05" stroke="#00ff41" stroke-width="1" opacity="0.9"/>
+    <rect x="980" y="76" width="170" height="28" rx="4" fill="#00ff41" opacity="0.12"/>
+  </g>
+  <text x="1065" y="95" text-anchor="middle" font-family="'Courier New', monospace" font-size="12" font-weight="bold" fill="#00ff41" letter-spacing="2">PESTUDIO</text>
+  <text x="998" y="125" font-family="'Courier New', monospace" font-size="10" fill="#00ff41" opacity="0.7">PE analysis</text>
+  <text x="998" y="143" font-family="'Courier New', monospace" font-size="10" fill="#00ff41" opacity="0.5">&gt; Import analysis</text>
+  <text x="998" y="161" font-family="'Courier New', monospace" font-size="10" fill="#00ff41" opacity="0.5">&gt; Section inspection</text>
+  <text x="998" y="179" font-family="'Courier New', monospace" font-size="10" fill="#00ff41" opacity="0.5">&gt; IOC identification</text>
+  <text x="998" y="197" font-family="'Courier New', monospace" font-size="9" fill="#00ff41" opacity="0.3">[ MALWARE ANALYSIS ]</text>
+
+  <!-- Divider -->
+  <line x1="80" y1="222" x2="1120" y2="222" stroke="#00ff41" stroke-width="0.5" opacity="0.12"/>
+
+  <!-- ============ ROW 2: ANALYSIS + SKILLS ============ -->
+
+  <!-- Card 6: CAPA -->
+  <g filter="url(#boxglow)">
+    <rect x="60" y="240" width="210" height="130" rx="4" fill="#050a05" stroke="#00ff41" stroke-width="1" opacity="0.9"/>
+    <rect x="60" y="240" width="210" height="28" rx="4" fill="#00ff41" opacity="0.08"/>
+  </g>
+  <text x="165" y="259" text-anchor="middle" font-family="'Courier New', monospace" font-size="12" font-weight="bold" fill="#00ff41" letter-spacing="2">CAPA</text>
+  <text x="80" y="289" font-family="'Courier New', monospace" font-size="10" fill="#00ff41" opacity="0.7">$ capa malware.exe</text>
+  <text x="80" y="307" font-family="'Courier New', monospace" font-size="10" fill="#00ff41" opacity="0.5">&gt; Capability detection</text>
+  <text x="80" y="325" font-family="'Courier New', monospace" font-size="10" fill="#00ff41" opacity="0.5">&gt; MITRE ATT&amp;CK mapping</text>
+  <text x="80" y="343" font-family="'Courier New', monospace" font-size="10" fill="#00ff41" opacity="0.5">&gt; Behavior fingerprint</text>
+  <text x="80" y="361" font-family="'Courier New', monospace" font-size="9" fill="#00ff41" opacity="0.3">[ MALWARE ANALYSIS ]</text>
+
+  <!-- Card 7: FLOSS -->
+  <g filter="url(#boxglow)">
+    <rect x="290" y="240" width="210" height="130" rx="4" fill="#050a05" stroke="#00ff41" stroke-width="1" opacity="0.9"/>
+    <rect x="290" y="240" width="210" height="28" rx="4" fill="#00ff41" opacity="0.08"/>
+  </g>
+  <text x="395" y="259" text-anchor="middle" font-family="'Courier New', monospace" font-size="12" font-weight="bold" fill="#00ff41" letter-spacing="2">FLOSS</text>
+  <text x="310" y="289" font-family="'Courier New', monospace" font-size="10" fill="#00ff41" opacity="0.7">$ floss sample.exe</text>
+  <text x="310" y="307" font-family="'Courier New', monospace" font-size="10" fill="#00ff41" opacity="0.5">&gt; String extraction</text>
+  <text x="310" y="325" font-family="'Courier New', monospace" font-size="10" fill="#00ff41" opacity="0.5">&gt; Obfuscated strings</text>
+  <text x="310" y="343" font-family="'Courier New', monospace" font-size="10" fill="#00ff41" opacity="0.5">&gt; URL/IOC harvesting</text>
+  <text x="310" y="361" font-family="'Courier New', monospace" font-size="9" fill="#00ff41" opacity="0.3">[ MALWARE ANALYSIS ]</text>
+
+  <!-- Card 8: Assembly / x86-64 -->
+  <g filter="url(#boxglow)">
+    <rect x="520" y="240" width="210" height="130" rx="4" fill="#050a05" stroke="#00ff41" stroke-width="1" opacity="0.9"/>
+    <rect x="520" y="240" width="210" height="28" rx="4" fill="#00ff41" opacity="0.08"/>
+  </g>
+  <text x="625" y="259" text-anchor="middle" font-family="'Courier New', monospace" font-size="12" font-weight="bold" fill="#00ff41" letter-spacing="2">x86 / x86-64 ASM</text>
+  <text x="540" y="289" font-family="'Courier New', monospace" font-size="10" fill="#00ff41" opacity="0.7">mov rdi, rsp</text>
+  <text x="540" y="307" font-family="'Courier New', monospace" font-size="10" fill="#00ff41" opacity="0.5">&gt; Register manipulation</text>
+  <text x="540" y="325" font-family="'Courier New', monospace" font-size="10" fill="#00ff41" opacity="0.5">&gt; Stack mechanics</text>
+  <text x="540" y="343" font-family="'Courier New', monospace" font-size="10" fill="#00ff41" opacity="0.5">&gt; Call conventions</text>
+  <text x="540" y="361" font-family="'Courier New', monospace" font-size="9" fill="#00ff41" opacity="0.3">[ LOW-LEVEL SKILLS ]</text>
+
+  <!-- Card 9: C / Systems programming -->
+  <g filter="url(#boxglow)">
+    <rect x="750" y="240" width="210" height="130" rx="4" fill="#050a05" stroke="#00ff41" stroke-width="1" opacity="0.9"/>
+    <rect x="750" y="240" width="210" height="28" rx="4" fill="#00ff41" opacity="0.08"/>
+  </g>
+  <text x="855" y="259" text-anchor="middle" font-family="'Courier New', monospace" font-size="12" font-weight="bold" fill="#00ff41" letter-spacing="2">C FOR EXPLOITATION</text>
+
+  <text x="770" y="289" font-family="'Courier New', monospace" font-size="10" fill="#00ff41" opacity="0.7">gets(buf); // :)</text>
+  <text x="770" y="307" font-family="'Courier New', monospace" font-size="10" fill="#00ff41" opacity="0.5">&gt; Vuln pattern recognition</text>
+  <text x="770" y="325" font-family="'Courier New', monospace" font-size="10" fill="#00ff41" opacity="0.5">&gt; Memory management</text>
+  <text x="770" y="343" font-family="'Courier New', monospace" font-size="10" fill="#00ff41" opacity="0.5">&gt; Unsafe function abuse</text>
+  <text x="770" y="361" font-family="'Courier New', monospace" font-size="9" fill="#00ff41" opacity="0.3">[ LOW-LEVEL SKILLS ]</text>
+
+  <!-- Card 10: VirusTotal -->
+  <g filter="url(#boxglow)">
+    <rect x="980" y="240" width="170" height="130" rx="4" fill="#050a05" stroke="#00ff41" stroke-width="1" opacity="0.9"/>
+    <rect x="980" y="240" width="170" height="28" rx="4" fill="#00ff41" opacity="0.08"/>
+  </g>
+  <text x="1065" y="259" text-anchor="middle" font-family="'Courier New', monospace" font-size="12" font-weight="bold" fill="#00ff41" letter-spacing="2">VIRUSTOTAL</text>
+  <text x="998" y="289" font-family="'Courier New', monospace" font-size="10" fill="#00ff41" opacity="0.7">sha256 lookup</text>
+  <text x="998" y="307" font-family="'Courier New', monospace" font-size="10" fill="#00ff41" opacity="0.5">&gt; Hash verification</text>
+  <text x="998" y="325" font-family="'Courier New', monospace" font-size="10" fill="#00ff41" opacity="0.5">&gt; AV engine scan</text>
+  <text x="998" y="343" font-family="'Courier New', monospace" font-size="10" fill="#00ff41" opacity="0.5">&gt; Threat intel</text>
+  <text x="998" y="361" font-family="'Courier New', monospace" font-size="9" fill="#00ff41" opacity="0.3">[ MALWARE ANALYSIS ]</text>
+
+  <!-- Bottom bar -->
+  <line x1="80" y1="386" x2="1120" y2="386" stroke="#00ff41" stroke-width="0.5" opacity="0.2"/>
+  <text x="600" y="406" text-anchor="middle" font-family="'Courier New', monospace" font-size="10" fill="#00ff41" opacity="0.35" letter-spacing="3">DEPTH OVER SHORTCUTS  ·  UNDERSTANDING OVER MEMORIZATION</text>
+
+  <!-- Corner accents -->
+  <g stroke="#00ff41" stroke-width="1" fill="none" opacity="0.3">
+    <polyline points="20,20 20,10 30,10"/>
+    <polyline points="1180,20 1180,10 1170,10"/>
+    <polyline points="20,400 20,410 30,410"/>
+    <polyline points="1180,400 1180,410 1170,410"/>
+  </g>
+</svg>
