@@ -1,137 +1,494 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300" width="1200" height="300">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+     viewBox="0 0 1200 300" width="1200" height="300">
   <defs>
-    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#050a05;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#0a1a0a;stop-opacity:1" />
+
+    <!-- ══ BACKGROUNDS ══ -->
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"   stop-color="#010c1a"/>
+      <stop offset="100%" stop-color="#020f22"/>
     </linearGradient>
-    <linearGradient id="glow" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" style="stop-color:#00ff41;stop-opacity:0" />
-      <stop offset="50%" style="stop-color:#00ff41;stop-opacity:0.15" />
-      <stop offset="100%" style="stop-color:#00ff41;stop-opacity:0" />
+
+    <linearGradient id="aurora-h" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%"   stop-color="#001830" stop-opacity="0"/>
+      <stop offset="30%"  stop-color="#003a5c" stop-opacity="0.35"/>
+      <stop offset="50%"  stop-color="#004d70" stop-opacity="0.5"/>
+      <stop offset="70%"  stop-color="#003a5c" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#001830" stop-opacity="0"/>
     </linearGradient>
-    <filter id="textglow">
-      <feGaussianBlur stdDeviation="3" result="blur"/>
-      <feMerge>
-        <feMergeNode in="blur"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
+
+    <radialGradient id="center-glow" cx="50%" cy="50%" r="45%">
+      <stop offset="0%"   stop-color="#00aaff" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#00aaff" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- ══ GLOWS ══ -->
+    <filter id="glow-text" x="-20%" y="-40%" width="140%" height="180%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="4" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
-    <filter id="subtleglow">
-      <feGaussianBlur stdDeviation="1.5" result="blur"/>
-      <feMerge>
-        <feMergeNode in="blur"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
+
+    <filter id="glow-soft" x="-30%" y="-60%" width="160%" height="220%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
+
+    <filter id="glow-flake" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="1.5" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+
+    <!-- ══ SNOWFLAKE SHAPES ══ -->
+    <!-- Large 6-arm crystal -->
+    <g id="flake-lg">
+      <line x1="0" y1="-12" x2="0" y2="12"   stroke="#b8e8ff" stroke-width="1.2" stroke-linecap="round"/>
+      <line x1="-10.4" y1="-6" x2="10.4" y2="6"  stroke="#b8e8ff" stroke-width="1.2" stroke-linecap="round"/>
+      <line x1="10.4" y1="-6" x2="-10.4" y2="6"  stroke="#b8e8ff" stroke-width="1.2" stroke-linecap="round"/>
+      <!-- arm tips -->
+      <line x1="0" y1="-12" x2="-3" y2="-9"  stroke="#b8e8ff" stroke-width="0.8"/>
+      <line x1="0" y1="-12" x2="3"  y2="-9"  stroke="#b8e8ff" stroke-width="0.8"/>
+      <line x1="0" y1="12"  x2="-3" y2="9"   stroke="#b8e8ff" stroke-width="0.8"/>
+      <line x1="0" y1="12"  x2="3"  y2="9"   stroke="#b8e8ff" stroke-width="0.8"/>
+      <line x1="-10.4" y1="-6" x2="-8.4" y2="-9.5" stroke="#b8e8ff" stroke-width="0.8"/>
+      <line x1="-10.4" y1="-6" x2="-7"   y2="-4"   stroke="#b8e8ff" stroke-width="0.8"/>
+      <line x1="10.4"  y1="-6" x2="8.4"  y2="-9.5" stroke="#b8e8ff" stroke-width="0.8"/>
+      <line x1="10.4"  y1="-6" x2="7"    y2="-4"   stroke="#b8e8ff" stroke-width="0.8"/>
+      <line x1="-10.4" y1="6"  x2="-8.4" y2="9.5"  stroke="#b8e8ff" stroke-width="0.8"/>
+      <line x1="-10.4" y1="6"  x2="-7"   y2="4"    stroke="#b8e8ff" stroke-width="0.8"/>
+      <line x1="10.4"  y1="6"  x2="8.4"  y2="9.5"  stroke="#b8e8ff" stroke-width="0.8"/>
+      <line x1="10.4"  y1="6"  x2="7"    y2="4"    stroke="#b8e8ff" stroke-width="0.8"/>
+      <!-- inner hex ring -->
+      <line x1="0" y1="-6"  x2="-2" y2="-4" stroke="#b8e8ff" stroke-width="0.6"/>
+      <line x1="0" y1="-6"  x2="2"  y2="-4" stroke="#b8e8ff" stroke-width="0.6"/>
+      <line x1="0" y1="6"   x2="-2" y2="4"  stroke="#b8e8ff" stroke-width="0.6"/>
+      <line x1="0" y1="6"   x2="2"  y2="4"  stroke="#b8e8ff" stroke-width="0.6"/>
+      <circle cx="0" cy="0" r="2" fill="#dff4ff" stroke="#b8e8ff" stroke-width="0.5"/>
+    </g>
+
+    <!-- Medium crystal -->
+    <g id="flake-md">
+      <line x1="0" y1="-8" x2="0" y2="8"    stroke="#a0d8f0" stroke-width="1" stroke-linecap="round"/>
+
+      <line x1="-6.9" y1="-4" x2="6.9" y2="4" stroke="#a0d8f0" stroke-width="1" stroke-linecap="round"/>
+      <line x1="6.9" y1="-4" x2="-6.9" y2="4" stroke="#a0d8f0" stroke-width="1" stroke-linecap="round"/>
+      <line x1="0" y1="-8" x2="-2" y2="-5.5" stroke="#a0d8f0" stroke-width="0.7"/>
+      <line x1="0" y1="-8" x2="2"  y2="-5.5" stroke="#a0d8f0" stroke-width="0.7"/>
+      <line x1="0" y1="8"  x2="-2" y2="5.5"  stroke="#a0d8f0" stroke-width="0.7"/>
+      <line x1="0" y1="8"  x2="2"  y2="5.5"  stroke="#a0d8f0" stroke-width="0.7"/>
+      <line x1="-6.9" y1="-4" x2="-5" y2="-6.5" stroke="#a0d8f0" stroke-width="0.7"/>
+      <line x1="-6.9" y1="-4" x2="-4.5" y2="-2" stroke="#a0d8f0" stroke-width="0.7"/>
+      <line x1="6.9"  y1="-4" x2="5"   y2="-6.5" stroke="#a0d8f0" stroke-width="0.7"/>
+      <line x1="6.9"  y1="-4" x2="4.5" y2="-2"   stroke="#a0d8f0" stroke-width="0.7"/>
+      <line x1="-6.9" y1="4"  x2="-5"  y2="6.5"  stroke="#a0d8f0" stroke-width="0.7"/>
+      <line x1="-6.9" y1="4"  x2="-4.5" y2="2"   stroke="#a0d8f0" stroke-width="0.7"/>
+      <line x1="6.9"  y1="4"  x2="5"   y2="6.5"  stroke="#a0d8f0" stroke-width="0.7"/>
+      <line x1="6.9"  y1="4"  x2="4.5" y2="2"    stroke="#a0d8f0" stroke-width="0.7"/>
+      <circle cx="0" cy="0" r="1.5" fill="#c8eeff" stroke="#a0d8f0" stroke-width="0.5"/>
+    </g>
+
+    <!-- Small dot-flake -->
+    <g id="flake-sm">
+      <line x1="0" y1="-5" x2="0" y2="5"    stroke="#88ccee" stroke-width="0.8" stroke-linecap="round"/>
+      <line x1="-4.3" y1="-2.5" x2="4.3" y2="2.5" stroke="#88ccee" stroke-width="0.8" stroke-linecap="round"/>
+      <line x1="4.3" y1="-2.5" x2="-4.3" y2="2.5" stroke="#88ccee" stroke-width="0.8" stroke-linecap="round"/>
+      <circle cx="0" cy="0" r="1" fill="#b0deff"/>
+    </g>
+
+    <!-- Tiny sparkle -->
+    <g id="sparkle">
+      <line x1="0" y1="-4" x2="0" y2="4"  stroke="#cceeff" stroke-width="0.7"/>
+      <line x1="-4" y1="0" x2="4" y2="0"  stroke="#cceeff" stroke-width="0.7"/>
+      <line x1="-2.8" y1="-2.8" x2="2.8" y2="2.8" stroke="#cceeff" stroke-width="0.5"/>
+      <line x1="2.8" y1="-2.8" x2="-2.8" y2="2.8" stroke="#cceeff" stroke-width="0.5"/>
+    </g>
+
   </defs>
 
-  <!-- Background -->
+  <!-- ══════════════════════════════════════════
+       BACKGROUND
+  ══════════════════════════════════════════ -->
   <rect width="1200" height="300" fill="url(#bg)"/>
 
-  <!-- Grid lines (subtle) -->
-  <g stroke="#00ff41" stroke-width="0.3" opacity="0.06">
-    <line x1="0" y1="50" x2="1200" y2="50"/>
+  <!-- Aurora band -->
+  <rect width="1200" height="300" fill="url(#aurora-h)">
+    <animate attributeName="opacity" values="0.6;1;0.6" dur="6s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- Center radial glow -->
+  <rect width="1200" height="300" fill="url(#center-glow)"/>
+
+  <!-- Grid lines -->
+  <g stroke="#4ab0e0" stroke-width="0.3" opacity="0.07">
+    <line x1="0" y1="50"  x2="1200" y2="50"/>
     <line x1="0" y1="100" x2="1200" y2="100"/>
     <line x1="0" y1="150" x2="1200" y2="150"/>
     <line x1="0" y1="200" x2="1200" y2="200"/>
     <line x1="0" y1="250" x2="1200" y2="250"/>
-    <line x1="100" y1="0" x2="100" y2="300"/>
-    <line x1="200" y1="0" x2="200" y2="300"/>
-    <line x1="300" y1="0" x2="300" y2="300"/>
-    <line x1="400" y1="0" x2="400" y2="300"/>
-    <line x1="500" y1="0" x2="500" y2="300"/>
-    <line x1="600" y1="0" x2="600" y2="300"/>
-    <line x1="700" y1="0" x2="700" y2="300"/>
-    <line x1="800" y1="0" x2="800" y2="300"/>
-    <line x1="900" y1="0" x2="900" y2="300"/>
+    <line x1="100"  y1="0" x2="100"  y2="300"/>
+    <line x1="200"  y1="0" x2="200"  y2="300"/>
+    <line x1="300"  y1="0" x2="300"  y2="300"/>
+    <line x1="400"  y1="0" x2="400"  y2="300"/>
+    <line x1="500"  y1="0" x2="500"  y2="300"/>
+    <line x1="600"  y1="0" x2="600"  y2="300"/>
+    <line x1="700"  y1="0" x2="700"  y2="300"/>
+    <line x1="800"  y1="0" x2="800"  y2="300"/>
+    <line x1="900"  y1="0" x2="900"  y2="300"/>
     <line x1="1000" y1="0" x2="1000" y2="300"/>
     <line x1="1100" y1="0" x2="1100" y2="300"/>
   </g>
 
-  <!-- Glow band center -->
-  <rect width="1200" height="300" fill="url(#glow)" opacity="0.5"/>
+  <!-- Ice crack veins -->
+  <g stroke="#78d0ff" stroke-width="0.8" fill="none" opacity="0.09">
+    <polyline points="80,0 110,55 90,110 130,165 110,230 140,300"/>
+    <polyline points="110,55 155,45 190,95"/>
+    <polyline points="90,110 55,145 75,210"/>
+    <polyline points="300,0 325,50 295,110 320,190 300,300"/>
+    <polyline points="325,50 380,70 360,130"/>
 
-  <!-- Left decorative bracket -->
-  <g stroke="#00ff41" stroke-width="1.5" fill="none" opacity="0.5">
-    <polyline points="60,60 40,60 40,240 60,240"/>
+    <polyline points="540,300 565,220 545,150 590,90 570,0"/>
+    <polyline points="565,220 620,230 640,290"/>
+    <polyline points="820,0 845,65 810,130 840,210 820,300"/>
+    <polyline points="845,65 895,50 875,115"/>
+    <polyline points="1060,0 1025,65 1055,145 1025,210 1050,300"/>
+    <polyline points="1025,65 985,50 965,115"/>
+    <polyline points="1055,145 1095,170 1085,240"/>
   </g>
 
-  <!-- Right decorative bracket -->
-  <g stroke="#00ff41" stroke-width="1.5" fill="none" opacity="0.5">
-    <polyline points="1140,60 1160,60 1160,240 1140,240"/>
+  <!-- ══════════════════════════════════════════
+       FALLING SNOWFLAKES — Large (flake-lg)
+  ══════════════════════════════════════════ -->
+
+  <!-- Each flake: translateX is fixed horizontal position, translateY animates -30 → 330 -->
+  <!-- Rotation also animates for spin effect -->
+
+  <!-- Flake 1 -->
+  <g opacity="0.55" filter="url(#glow-flake)">
+    <g transform="translate(60,0)">
+      <animateTransform attributeName="transform" type="translate"
+        values="60,-30; 60,330" dur="7s" begin="0s" repeatCount="indefinite"/>
+      <g>
+        <animateTransform attributeName="transform" type="rotate"
+          values="0;360" dur="7s" repeatCount="indefinite"/>
+        <use xlink:href="#flake-lg"/>
+      </g>
+    </g>
   </g>
 
-  <!-- Top horizontal accent line -->
-  <line x1="80" y1="72" x2="1120" y2="72" stroke="#00ff41" stroke-width="0.5" opacity="0.25"/>
-  <!-- Bottom horizontal accent line -->
-  <line x1="80" y1="228" x2="1120" y2="228" stroke="#00ff41" stroke-width="0.5" opacity="0.25"/>
-
-  <!-- Floating binary rain (left side) -->
-  <g font-family="'Courier New', monospace" font-size="11" fill="#00ff41" opacity="0.08">
-    <text x="75" y="90">01001000</text>
-    <text x="75" y="108">11010010</text>
-    <text x="75" y="126">00101101</text>
-    <text x="75" y="144">10110100</text>
-    <text x="75" y="162">01001000</text>
-    <text x="75" y="180">11010010</text>
-    <text x="75" y="198">00101101</text>
-    <text x="75" y="216">10110100</text>
+  <!-- Flake 2 -->
+  <g opacity="0.45" filter="url(#glow-flake)">
+    <g transform="translate(180,0)">
+      <animateTransform attributeName="transform" type="translate"
+        values="180,-30; 180,330" dur="9s" begin="-3s" repeatCount="indefinite"/>
+      <g>
+        <animateTransform attributeName="transform" type="rotate"
+          values="0;-360" dur="9s" repeatCount="indefinite"/>
+        <use xlink:href="#flake-lg"/>
+      </g>
+    </g>
   </g>
 
-  <!-- Floating binary rain (right side) -->
-  <g font-family="'Courier New', monospace" font-size="11" fill="#00ff41" opacity="0.08">
-    <text x="1050" y="90">11001010</text>
-    <text x="1050" y="108">00110101</text>
-    <text x="1050" y="126">10100110</text>
-    <text x="1050" y="144">01011001</text>
-    <text x="1050" y="162">11001010</text>
-    <text x="1050" y="180">00110101</text>
-    <text x="1050" y="198">10100110</text>
-    <text x="1050" y="216">01011001</text>
+  <!-- Flake 3 -->
+  <g opacity="0.6" filter="url(#glow-flake)">
+    <g transform="translate(350,0)">
+      <animateTransform attributeName="transform" type="translate"
+        values="350,-30; 350,330" dur="8s" begin="-1.5s" repeatCount="indefinite"/>
+      <g>
+        <animateTransform attributeName="transform" type="rotate"
+          values="0;360" dur="8s" repeatCount="indefinite"/>
+        <use xlink:href="#flake-lg"/>
+      </g>
+    </g>
   </g>
 
-  <!-- Terminal prompt prefix -->
-  <text x="600" y="108" text-anchor="middle" font-family="'Courier New', monospace" font-size="14" fill="#00ff41" opacity="0.6" filter="url(#subtleglow)">root@qqq:~$</text>
+  <!-- Flake 4 -->
+  <g opacity="0.4" filter="url(#glow-flake)">
+    <g transform="translate(490,0)">
+      <animateTransform attributeName="transform" type="translate"
+        values="490,-30; 490,330" dur="11s" begin="-5s" repeatCount="indefinite"/>
+      <g>
+        <animateTransform attributeName="transform" type="rotate"
+          values="0;-360" dur="11s" repeatCount="indefinite"/>
+        <use xlink:href="#flake-lg"/>
+      </g>
+    </g>
+  </g>
 
-  <!-- Main name -->
-  <text x="600" y="175" text-anchor="middle" font-family="'Courier New', monospace" font-size="50" font-weight="bold" fill="#00ff41" filter="url(#textglow)" letter-spacing="18">QQQ</text>
+  <!-- Flake 5 -->
+  <g opacity="0.5" filter="url(#glow-flake)">
+    <g transform="translate(700,0)">
+      <animateTransform attributeName="transform" type="translate"
+        values="700,-30; 700,330" dur="10s" begin="-2s" repeatCount="indefinite"/>
+      <g>
+        <animateTransform attributeName="transform" type="rotate"
+          values="0;360" dur="10s" repeatCount="indefinite"/>
+        <use xlink:href="#flake-lg"/>
+      </g>
+    </g>
+  </g>
 
+  <!-- Flake 6 -->
+  <g opacity="0.45" filter="url(#glow-flake)">
+    <g transform="translate(860,0)">
+      <animateTransform attributeName="transform" type="translate"
+        values="860,-30; 860,330" dur="8.5s" begin="-4s" repeatCount="indefinite"/>
+      <g>
+        <animateTransform attributeName="transform" type="rotate"
+          values="0;-360" dur="8.5s" repeatCount="indefinite"/>
+        <use xlink:href="#flake-lg"/>
+      </g>
+    </g>
+  </g>
 
-  <!-- Subtitle -->
-  <text x="600" y="207" text-anchor="middle" font-family="'Courier New', monospace" font-size="13" fill="#00ff41" opacity="0.7" letter-spacing="4">EXPLOIT DEVELOPER  ·  OFFENSIVE SECURITY  ·  REVERSE ENGINEER</text>
+  <!-- Flake 7 -->
+  <g opacity="0.55" filter="url(#glow-flake)">
+    <g transform="translate(1010,0)">
+      <animateTransform attributeName="transform" type="translate"
+        values="1010,-30; 1010,330" dur="9.5s" begin="-6s" repeatCount="indefinite"/>
+      <g>
+        <animateTransform attributeName="transform" type="rotate"
+          values="0;360" dur="9.5s" repeatCount="indefinite"/>
+        <use xlink:href="#flake-lg"/>
+      </g>
+    </g>
+  </g>
 
-  <!-- Bottom tagline -->
-  <text x="600" y="248" text-anchor="middle" font-family="'Courier New', monospace" font-size="18" fill="#00ff41" opacity="0.4" letter-spacing="2">"if it crashes, i'm interested"</text>
+  <!-- Flake 8 -->
+  <g opacity="0.38" filter="url(#glow-flake)">
+    <g transform="translate(1140,0)">
+      <animateTransform attributeName="transform" type="translate"
+        values="1140,-30; 1140,330" dur="7.5s" begin="-1s" repeatCount="indefinite"/>
+      <g>
+        <animateTransform attributeName="transform" type="rotate"
+          values="0;-360" dur="7.5s" repeatCount="indefinite"/>
+        <use xlink:href="#flake-lg"/>
+      </g>
+    </g>
+  </g>
+
+  <!-- ══════════════════════════════════════════
+       FALLING SNOWFLAKES — Medium (flake-md)
+  ══════════════════════════════════════════ -->
+
+  <!-- md 1 -->
+  <g opacity="0.5" filter="url(#glow-flake)">
+    <g><animateTransform attributeName="transform" type="translate"
+        values="130,-20; 130,320" dur="6s" begin="-0.5s" repeatCount="indefinite"/>
+      <g><animateTransform attributeName="transform" type="rotate"
+          values="0;360" dur="6s" repeatCount="indefinite"/>
+        <use xlink:href="#flake-md"/></g></g>
+  </g>
+
+  <!-- md 2 -->
+  <g opacity="0.42" filter="url(#glow-flake)">
+    <g><animateTransform attributeName="transform" type="translate"
+        values="270,-20; 270,320" dur="8s" begin="-4s" repeatCount="indefinite"/>
+      <g><animateTransform attributeName="transform" type="rotate"
+          values="0;-360" dur="8s" repeatCount="indefinite"/>
+        <use xlink:href="#flake-md"/></g></g>
+  </g>
+
+  <!-- md 3 -->
+  <g opacity="0.55" filter="url(#glow-flake)">
+    <g><animateTransform attributeName="transform" type="translate"
+        values="430,-20; 430,320" dur="7s" begin="-2s" repeatCount="indefinite"/>
+      <g><animateTransform attributeName="transform" type="rotate"
+          values="0;360" dur="7s" repeatCount="indefinite"/>
+        <use xlink:href="#flake-md"/></g></g>
+  </g>
+
+  <!-- md 4 -->
+  <g opacity="0.38" filter="url(#glow-flake)">
+    <g><animateTransform attributeName="transform" type="translate"
+        values="610,-20; 610,320" dur="9s" begin="-7s" repeatCount="indefinite"/>
+      <g><animateTransform attributeName="transform" type="rotate"
+          values="0;-360" dur="9s" repeatCount="indefinite"/>
+        <use xlink:href="#flake-md"/></g></g>
+  </g>
+
+  <!-- md 5 -->
+  <g opacity="0.5" filter="url(#glow-flake)">
+    <g><animateTransform attributeName="transform" type="translate"
+        values="770,-20; 770,320" dur="6.5s" begin="-3s" repeatCount="indefinite"/>
+      <g><animateTransform attributeName="transform" type="rotate"
+          values="0;360" dur="6.5s" repeatCount="indefinite"/>
+        <use xlink:href="#flake-md"/></g></g>
+  </g>
+
+  <!-- md 6 -->
+  <g opacity="0.45" filter="url(#glow-flake)">
+    <g><animateTransform attributeName="transform" type="translate"
+        values="940,-20; 940,320" dur="7.8s" begin="-5s" repeatCount="indefinite"/>
+      <g><animateTransform attributeName="transform" type="rotate"
+          values="0;-360" dur="7.8s" repeatCount="indefinite"/>
+        <use xlink:href="#flake-md"/></g></g>
+  </g>
+
+  <!-- md 7 -->
+  <g opacity="0.5" filter="url(#glow-flake)">
+    <g><animateTransform attributeName="transform" type="translate"
+        values="1090,-20; 1090,320" dur="8.2s" begin="-1.8s" repeatCount="indefinite"/>
+      <g><animateTransform attributeName="transform" type="rotate"
+          values="0;360" dur="8.2s" repeatCount="indefinite"/>
+        <use xlink:href="#flake-md"/></g></g>
+  </g>
+
+  <!-- ══════════════════════════════════════════
+       FALLING SNOWFLAKES — Small (flake-sm) — more of them
+  ══════════════════════════════════════════ -->
+
+  <g opacity="0.6"><g><animateTransform attributeName="transform" type="translate" values="45,-15; 45,315" dur="5s" begin="0s" repeatCount="indefinite"/>
+    <g><animateTransform attributeName="transform" type="rotate" values="0;360" dur="5s" repeatCount="indefinite"/><use xlink:href="#flake-sm"/></g></g></g>
+
+    <g opacity="0.5"><g><animateTransform attributeName="transform" type="translate" values="160,-15; 160,315" dur="6s" begin="-1s" repeatCount="indefinite"/>
+    <g><animateTransform attributeName="transform" type="rotate" values="0;-360" dur="6s" repeatCount="indefinite"/><use xlink:href="#flake-sm"/></g></g></g>
+
+  <g opacity="0.45"><g><animateTransform attributeName="transform" type="translate" values="240,-15; 240,315" dur="5.5s" begin="-2.5s" repeatCount="indefinite"/>
+    <g><animateTransform attributeName="transform" type="rotate" values="0;360" dur="5.5s" repeatCount="indefinite"/><use xlink:href="#flake-sm"/></g></g></g>
+
+  <g opacity="0.55"><g><animateTransform attributeName="transform" type="translate" values="380,-15; 380,315" dur="7s" begin="-0.8s" repeatCount="indefinite"/>
+    <g><animateTransform attributeName="transform" type="rotate" values="0;-360" dur="7s" repeatCount="indefinite"/><use xlink:href="#flake-sm"/></g></g></g>
+
+  <g opacity="0.4"><g><animateTransform attributeName="transform" type="translate" values="460,-15; 460,315" dur="6.5s" begin="-3.5s" repeatCount="indefinite"/>
+    <g><animateTransform attributeName="transform" type="rotate" values="0;360" dur="6.5s" repeatCount="indefinite"/><use xlink:href="#flake-sm"/></g></g></g>
+
+  <g opacity="0.6"><g><animateTransform attributeName="transform" type="translate" values="530,-15; 530,315" dur="5.8s" begin="-1.5s" repeatCount="indefinite"/>
+    <g><animateTransform attributeName="transform" type="rotate" values="0;-360" dur="5.8s" repeatCount="indefinite"/><use xlink:href="#flake-sm"/></g></g></g>
+
+  <g opacity="0.48"><g><animateTransform attributeName="transform" type="translate" values="655,-15; 655,315" dur="7.5s" begin="-4s" repeatCount="indefinite"/>
+    <g><animateTransform attributeName="transform" type="rotate" values="0;360" dur="7.5s" repeatCount="indefinite"/><use xlink:href="#flake-sm"/></g></g></g>
+
+  <g opacity="0.52"><g><animateTransform attributeName="transform" type="translate" values="735,-15; 735,315" dur="6.2s" begin="-2.2s" repeatCount="indefinite"/>
+    <g><animateTransform attributeName="transform" type="rotate" values="0;-360" dur="6.2s" repeatCount="indefinite"/><use xlink:href="#flake-sm"/></g></g></g>
+
+  <g opacity="0.45"><g><animateTransform attributeName="transform" type="translate" values="810,-15; 810,315" dur="5.2s" begin="-0.3s" repeatCount="indefinite"/>
+    <g><animateTransform attributeName="transform" type="rotate" values="0;360" dur="5.2s" repeatCount="indefinite"/><use xlink:href="#flake-sm"/></g></g></g>
+
+  <g opacity="0.58"><g><animateTransform attributeName="transform" type="translate" values="895,-15; 895,315" dur="8s" begin="-5.5s" repeatCount="indefinite"/>
+    <g><animateTransform attributeName="transform" type="rotate" values="0;-360" dur="8s" repeatCount="indefinite"/><use xlink:href="#flake-sm"/></g></g></g>
+
+  <g opacity="0.43"><g><animateTransform attributeName="transform" type="translate" values="975,-15; 975,315" dur="6.8s" begin="-3s" repeatCount="indefinite"/>
+    <g><animateTransform attributeName="transform" type="rotate" values="0;360" dur="6.8s" repeatCount="indefinite"/><use xlink:href="#flake-sm"/></g></g></g>
+
+  <g opacity="0.6"><g><animateTransform attributeName="transform" type="translate" values="1050,-15; 1050,315" dur="5.5s" begin="-1.2s" repeatCount="indefinite"/>
+    <g><animateTransform attributeName="transform" type="rotate" values="0;-360" dur="5.5s" repeatCount="indefinite"/><use xlink:href="#flake-sm"/></g></g></g>
+
+  <g opacity="0.47"><g><animateTransform attributeName="transform" type="translate" values="1130,-15; 1130,315" dur="7.2s" begin="-6s" repeatCount="indefinite"/>
+    <g><animateTransform attributeName="transform" type="rotate" values="0;360" dur="7.2s" repeatCount="indefinite"/><use xlink:href="#flake-sm"/></g></g></g>
+
+    <g opacity="0.5"><g><animateTransform attributeName="transform" type="translate" values="1170,-15; 1170,315" dur="6.4s" begin="-2.8s" repeatCount="indefinite"/>
+    <g><animateTransform attributeName="transform" type="rotate" values="0;-360" dur="6.4s" repeatCount="indefinite"/><use xlink:href="#flake-sm"/></g></g></g>
+
+  <!-- ══════════════════════════════════════════
+       SPARKLES  — fast twinkle as they fall
+  ══════════════════════════════════════════ -->
+
+  <g opacity="0.55"><g><animateTransform attributeName="transform" type="translate" values="95,-10; 95,310" dur="4s" begin="-0.7s" repeatCount="indefinite"/>
+    <use xlink:href="#sparkle"/></g></g>
+
+  <g opacity="0.45"><g><animateTransform attributeName="transform" type="translate" values="215,-10; 215,310" dur="5s" begin="-2s" repeatCount="indefinite"/>
+    <use xlink:href="#sparkle"/></g></g>
+
+  <g opacity="0.6"><g><animateTransform attributeName="transform" type="translate" values="410,-10; 410,310" dur="4.5s" begin="-1s" repeatCount="indefinite"/>
+    <use xlink:href="#sparkle"/></g></g>
+
+  <g opacity="0.4"><g><animateTransform attributeName="transform" type="translate" values="575,-10; 575,310" dur="6s" begin="-3.5s" repeatCount="indefinite"/>
+    <use xlink:href="#sparkle"/></g></g>
+
+  <g opacity="0.5"><g><animateTransform attributeName="transform" type="translate" values="680,-10; 680,310" dur="5.5s" begin="-1.8s" repeatCount="indefinite"/>
+    <use xlink:href="#sparkle"/></g></g>
+
+  <g opacity="0.55"><g><animateTransform attributeName="transform" type="translate" values="790,-10; 790,310" dur="4.2s" begin="-0.5s" repeatCount="indefinite"/>
+    <use xlink:href="#sparkle"/></g></g>
+
+  <g opacity="0.45"><g><animateTransform attributeName="transform" type="translate" values="920,-10; 920,310" dur="5.8s" begin="-4s" repeatCount="indefinite"/>
+    <use xlink:href="#sparkle"/></g></g>
+
+  <g opacity="0.5"><g><animateTransform attributeName="transform" type="translate" values="1075,-10; 1075,310" dur="4.8s" begin="-2.5s" repeatCount="indefinite"/>
+    <use xlink:href="#sparkle"/></g></g>
+
+  <g opacity="0.42"><g><animateTransform attributeName="transform" type="translate" values="1160,-10; 1160,310" dur="5.3s" begin="-1.3s" repeatCount="indefinite"/>
+    <use xlink:href="#sparkle"/></g></g>
+
+  <!-- ══════════════════════════════════════════
+       FRAME DECORATIONS
+  ══════════════════════════════════════════ -->
+
+  <!-- Side bracket lines -->
+  <g stroke="#4ab8e8" stroke-width="1.5" fill="none" opacity="0.45">
+    <polyline points="58,65 40,65 40,235 58,235"/>
+    <polyline points="1142,65 1160,65 1160,235 1142,235"/>
+  </g>
+
+  <!-- Horizontal accent lines -->
+  <line x1="75" y1="72" x2="1125" y2="72" stroke="#4ab8e8" stroke-width="0.5" opacity="0.2"/>
+  <line x1="75" y1="228" x2="1125" y2="228" stroke="#4ab8e8" stroke-width="0.5" opacity="0.2"/>
 
   <!-- Corner accents -->
-  <g stroke="#00ff41" stroke-width="1" fill="none" opacity="0.35">
-    <polyline points="40,40 40,20 60,20"/>
-    <polyline points="1160,40 1160,20 1140,20"/>
-    <polyline points="40,260 40,280 60,280"/>
-    <polyline points="1160,260 1160,280 1140,280"/>
+  <g stroke="#78d8ff" stroke-width="1.2" fill="none" opacity="0.5">
+    <polyline points="40,42 40,22 60,22"/>
+    <polyline points="1160,42 1160,22 1140,22"/>
+    <polyline points="40,258 40,278 60,278"/>
+    <polyline points="1160,258 1160,278 1140,278"/>
   </g>
 
-  <!-- Scan line effect (subtle horizontal lines) -->
-  <g opacity="0.025">
-    <rect x="0" y="0" width="1200" height="1" fill="#00ff41"/>
-    <rect x="0" y="3" width="1200" height="1" fill="#00ff41"/>
-    <rect x="0" y="6" width="1200" height="1" fill="#00ff41"/>
-    <rect x="0" y="9" width="1200" height="1" fill="#00ff41"/>
-    <rect x="0" y="12" width="1200" height="1" fill="#00ff41"/>
-    <rect x="0" y="15" width="1200" height="1" fill="#00ff41"/>
-    <rect x="0" y="18" width="1200" height="1" fill="#00ff41"/>
-    <rect x="0" y="21" width="1200" height="1" fill="#00ff41"/>
-    <rect x="0" y="24" width="1200" height="1" fill="#00ff41"/>
-    <rect x="0" y="27" width="1200" height="1" fill="#00ff41"/>
-    <rect x="0" y="30" width="1200" height="1" fill="#00ff41"/>
-    <rect x="0" y="60" width="1200" height="1" fill="#00ff41"/>
-    <rect x="0" y="90" width="1200" height="1" fill="#00ff41"/>
-    <rect x="0" y="120" width="1200" height="1" fill="#00ff41"/>
-    <rect x="0" y="150" width="1200" height="1" fill="#00ff41"/>
-    <rect x="0" y="180" width="1200" height="1" fill="#00ff41"/>
-    <rect x="0" y="210" width="1200" height="1" fill="#00ff41"/>
-    <rect x="0" y="240" width="1200" height="1" fill="#00ff41"/>
-    <rect x="0" y="270" width="1200" height="1" fill="#00ff41"/>
-    <rect x="0" y="300" width="1200" height="1" fill="#00ff41"/>
-  </g>
+  <!-- Animated frost shimmer border — top -->
+  <rect x="0" y="0" width="1200" height="2" fill="none"
+    stroke="url(#aurora-h)" stroke-width="2">
+    <animate attributeName="opacity" values="0.3;0.9;0.3" dur="3s" repeatCount="indefinite"/>
+  </rect>
+  <!-- bottom -->
+  <rect x="0" y="298" width="1200" height="2" fill="none"
+    stroke="url(#aurora-h)" stroke-width="2">
+    <animate attributeName="opacity" values="0.3;0.9;0.3" dur="3s" begin="-1.5s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- ══════════════════════════════════════════
+       MAIN CONTENT
+  ══════════════════════════════════════════ -->
+
+  <!-- Terminal prompt -->
+  <text x="600" y="108" text-anchor="middle"
+    font-family="'Courier New', Courier, monospace" font-size="18"
+    fill="#70c8f0" opacity="0.65" letter-spacing="1">
+    root@qqq:~$
+    <animate attributeName="opacity" values="0.65;0.3;0.65" dur="1.2s" repeatCount="indefinite"/>
+  </text>
+  <!-- Name glow bloom (background layer) -->
+  <text x="600" y="175" text-anchor="middle"
+    font-family="'Courier New', Courier, monospace" font-size="62"
+    font-weight="900" letter-spacing="22"
+    fill="#00aaff" opacity="0.18" filter="url(#glow-soft)">QQQ</text>
+
+  <!-- Name main -->
+  <text x="600" y="175" text-anchor="middle"
+    font-family="'Courier New', Courier, monospace" font-size="62"
+    font-weight="900" letter-spacing="22"
+    fill="#e0f4ff" filter="url(#glow-text)">
+    QQQ
+    <animate attributeName="fill"
+      values="#e0f4ff;#ffffff;#b8e8ff;#ffffff;#e0f4ff"
+      dur="4s" repeatCount="indefinite"/>
+  </text>
+
+  <!-- Subtitle -->
+  <text x="600" y="207" text-anchor="middle"
+    font-family="'Courier New', Courier, monospace" font-size="11.5"
+    fill="#70c8ee" letter-spacing="4.5">
+    EXPLOIT DEVELOPER  ·  OFFENSIVE SECURITY  ·  REVERSE ENGINEER
+    <animate attributeName="opacity" values="0.65;0.95;0.65" dur="5s" repeatCount="indefinite"/>
+  </text>
+
+  <!-- Tagline -->
+  <text x="600" y="242" text-anchor="middle"
+    font-family="'Courier New', Courier, monospace" font-size="13"
+    fill="#4898b8" opacity="0.55" letter-spacing="2">
+    "if it crashes, i'm interested"
+  </text>
+
+  <!-- ══════════════════════════════════════════
+       SCANLINE OVERLAY
+  ══════════════════════════════════════════ -->
+  <rect width="1200" height="300" fill="none"
+    style="background:repeating-linear-gradient(to bottom,transparent 0,transparent 2px,rgba(0,0,0,0.04) 2px,rgba(0,0,0,0.04) 3px)"
+    opacity="0.4"/>
+
 </svg>
