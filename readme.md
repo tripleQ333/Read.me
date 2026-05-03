@@ -95,6 +95,7 @@ I believe the difference between a script kiddie and a real exploit developer is
 
 ## Projects --ls
 
+```
 .
 ├── Cyber-in-Somali/              # Cybersecurity education in Somali language
 │   ├── Core-Concepts/            # Computer arch, memory, assembly, buffer overflow
@@ -102,7 +103,8 @@ I believe the difference between a script kiddie and a real exploit developer is
 │
 └── Malware-Analysis/
     └── WannaCry-Ransomware/      # Full static + dynamic analysis
-        └── Evidence/             # 23 documented evidence files
+`        └── Evidence/             # 23 documented evidence files
+```
 > Cyber-in-Somali — Making offensive security knowledge accessible to Somali speakers. Because knowledge shouldn't have a language barrier.
 
 ---
